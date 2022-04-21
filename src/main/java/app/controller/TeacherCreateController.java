@@ -1,6 +1,6 @@
 package app.controller;
 
-import app.dao.TeacherRepository;
+import app.dao.PersonRepository;
 import app.entity.Person;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,9 +14,9 @@ import javax.validation.Valid;
 @Controller
 public class TeacherCreateController {
 
-    private final TeacherRepository teacherRepository;
+    private final PersonRepository teacherRepository;
 
-    public TeacherCreateController(TeacherRepository teacherRepository) {
+    public TeacherCreateController(PersonRepository teacherRepository) {
         this.teacherRepository = teacherRepository;
     }
 

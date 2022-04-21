@@ -1,7 +1,7 @@
 package app.controller;
 
 import app.dao.LessonRepository;
-import app.dao.TeacherRepository;
+import app.dao.PersonRepository;
 import app.entity.Lesson;
 import app.entity.Person;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ public class LessonCreateController {
     private LessonRepository lessonRepository;
 
     @Autowired
-    private TeacherRepository teacherRepository;
+    private PersonRepository teacherRepository;
 
     @ModelAttribute
     private void persons(Model model) {

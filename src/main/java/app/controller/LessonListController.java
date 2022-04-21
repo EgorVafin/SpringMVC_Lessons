@@ -1,7 +1,7 @@
 package app.controller;
 
 import app.dao.LessonRepository;
-import app.dao.TeacherRepository;
+import app.dao.PersonRepository;
 import app.entity.Lesson;
 import app.entity.Person;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +15,10 @@ import java.util.List;
 public class LessonListController {
 
     private final LessonRepository lessonRepository;
-    private final TeacherRepository teacherRepository;
+    private final PersonRepository teacherRepository;
 
     public LessonListController(@Autowired LessonRepository lessonRepository,
-                                @Autowired TeacherRepository teacherRepository) {
+                                @Autowired PersonRepository teacherRepository) {
         this.lessonRepository = lessonRepository;
         this.teacherRepository = teacherRepository;
     }
