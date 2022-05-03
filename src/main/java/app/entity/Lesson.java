@@ -46,6 +46,9 @@ public class Lesson {
     @JoinColumn(name = "teacher_id")
     private Person teacher;
 
+    @Column(name="comment", nullable = true)
+    private String comment;
+
     @ManyToMany
     @JoinTable(name = "subscriptions",
             joinColumns = {@JoinColumn(name = "lesson_id")},

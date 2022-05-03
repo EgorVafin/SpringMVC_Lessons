@@ -27,13 +27,4 @@ public class RegistrationDto {
     @NotBlank
     private String confirmPassword;
 
-//    @AssertTrue(message = "error")
-//    public boolean matchPasswordValidate() {
-//
-//        if(password.equals(confirmPassword)) {
-//            return true;
-//        }
-//        return false;
-//    }
-
 }

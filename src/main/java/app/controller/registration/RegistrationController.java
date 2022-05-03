@@ -51,9 +51,7 @@ public class RegistrationController {
             person.setName(registrationDto.getName());
             person.setSurname(registrationDto.getSurname());
             person.setEmail(registrationDto.getEmail());
-
             person.setPassword(passwordEncoder.encode(registrationDto.getPassword()));
-
 
             personRepository.save(person);
 

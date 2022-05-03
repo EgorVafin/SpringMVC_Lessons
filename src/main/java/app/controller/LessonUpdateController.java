@@ -4,6 +4,7 @@ import app.dao.LessonRepository;
 import app.dao.PersonRepository;
 import app.entity.Lesson;
 import app.entity.Person;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -51,14 +52,15 @@ public class LessonUpdateController {
 
 
     @PostMapping("/lesson/{id}/edit")
-    public String updateLesson(@PathVariable long id, @ModelAttribute @Valid Lesson lesson, BindingResult bindingResult) {
+    public String updateLesson(@PathVariable(name = "id") Lesson entity, @ModelAttribute @Valid Lesson lesson, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
 
             return "lesson/create";
         } else {
 
-            lessonRepository.save(lesson);
+            BeanUtils.copyProperties(lesson, entity);
+            lessonRepository.save(entity);
 
             return "redirect:/";
         }
