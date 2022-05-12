@@ -5,6 +5,8 @@ import app.dao.PersonRepository;
 import app.entity.Lesson;
 import app.entity.Person;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -32,6 +34,8 @@ public class LessonCreateController {
 
     @GetMapping("/lesson/create")
     public String index(Model model) {
+
+
         Lesson lesson = new Lesson();
         lesson.setDescription("test");
         model.addAttribute("lesson", lesson);
@@ -45,6 +49,9 @@ public class LessonCreateController {
 
             return "lesson/create";
         } else {
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            Person person = (Person) authentication.getPrincipal();
+            lesson.setTeacher(person);
             lessonRepository.save(lesson);
 
             return "redirect:/";

@@ -16,12 +16,10 @@
             <div class="col-12">
                 <h1 class="text-center text-white">Lesson create page</h1>
                 <br>
-
             </div>
         </div>
     </div>
 </header>
-
 <br>
 
 <div class="container">
@@ -65,13 +63,14 @@
                 </div>
 
 
-                <div class="mb-3">
-                    <label for="teacher" class="form-label required">Teacher</label>
-                    <select id="teacher" class="form-control" th:field="*{teacher}">
-                        <option th:each="teacher: ${persons}" th:text="${teacher.label()}"
-                                th:value="${teacher.getId}"></option>
-                    </select>
-               </div>
+<!--                <div class="mb-3">-->
+<!--                    <label for="teacher" class="form-label required">Teacher</label>-->
+<!--                    <select id="teacher" class="form-control" th:field="*{teacher}">-->
+
+<!--                        <option th:each="teacher: ${persons}" th:text="${teacher.label()}"-->
+<!--                                th:value="${teacher.getId}"></option>-->
+<!--                    </select>-->
+<!--               </div>-->
 
                 <div class="mb-3">
                     <label for="students" class="form-label required">Students</label>
