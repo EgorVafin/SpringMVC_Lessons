@@ -28,6 +28,8 @@ public class Lesson {
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private Date date;
 
+    @Column(name = "pay")
+    private boolean pay;
 
     @Column(name = "duration")
     @Min(value = 30, message = "lesson must be min 30 min")

@@ -1,10 +1,6 @@
 drop table if exists lessons;
 drop table if exists persons;
 drop table if exists subscriptions;
-alter table lessons drop foreign key FKffnkqqgifjm9agaxusyrmjsl;
-alter table subscriptions drop foreign key FKpbh3yob6tb0s5e042o369jnhv;
-alter table subscriptions drop foreign key FKlqlsoks080lmc0929ggfl99od;
-
 
 create table lessons (
     id bigint not null auto_increment,
@@ -32,3 +28,6 @@ alter table persons add constraint UK_1x5aosta48fbss4d5b3kuu0rd unique (email);
 alter table lessons add constraint FKffnkqqgifjm9agaxusyrmjsl foreign key (teacher_id) references persons (id);
 alter table subscriptions add constraint FKpbh3yob6tb0s5e042o369jnhv foreign key (person_id) references persons (id);
 alter table subscriptions add constraint FKlqlsoks080lmc0929ggfl99od foreign key (lesson_id) references lessons (id);
+
+
+
